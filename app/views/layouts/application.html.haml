@@ -19,7 +19,6 @@
           %ul.nav.navbar-nav.navbar-right
             - if logged_in?
               %li= link_to 'ログアウト', logout_path
-              %li= link_to 'ログアウト', logout_path
             - else
               %li= link_to 'Twitterでログイン', '/auth/twitter'
     .container

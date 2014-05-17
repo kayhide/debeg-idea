@@ -1,10 +1,15 @@
-- if idea.iines.where(giver_id: current_user.id).present?
-  %button.btn.btn-primary.btn-xs{disabled: "disabled"}
-    いいね
-  = idea.iines.count
-- else
-  = form_for Iine.new(idea_id: idea.id), html: {class: 'form-inline'} do |f|
-    = f.hidden_field :idea_id
-    %button.btn.btn-primary.btn-xs
+- if current_user.present?
+  - if idea.iines.where(giver_id: current_user.id).present?
+    %button.btn.btn-primary.btn-xs{disabled: "disabled"}
       いいね
     = idea.iines.count
+  - else
+    = form_for Iine.new(idea_id: idea.id), html: {class: 'form-inline'} do |f|
+      = f.hidden_field :idea_id
+      %button.btn.btn-primary.btn-xs
+        いいね
+      = idea.iines.count
+- else
+  %button.btn.btn-default.btn-xs{disabled: "disabled"}
+    いいね
+  = idea.iines.count
