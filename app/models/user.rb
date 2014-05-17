@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :ideas
+  has_many :given_iines, class_name: 'Iine', foreign_key: :giver_id
+  has_many :taken_iines, class_name: 'Iine', foreign_key: :taker_id
 
   def self.find_or_create_from_auth_hash(auth_hash)
     provider = auth_hash[:provider]
