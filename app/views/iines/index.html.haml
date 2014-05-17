@@ -1,2 +1,7 @@
-%h1 Iines#index
-%p Find me in app/views/iines/index.html.haml
+%h2 Taken
+%table.table.table-bordered.table-condensed.table-hover= render current_user.taken_iines
+
+%h2 Given
+%table.table.table-bordered.table-condensed.table-hover= render current_user.given_iines
+
+
