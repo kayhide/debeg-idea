@@ -26,11 +26,12 @@ group :development, :test do
   gem 'pry-byebug'
   gem "binding_of_caller"
   gem 'meta_request'
-  gem 'rspec-rails', '~> 3.0.0.beta', github: 'rspec/rspec-rails'
-  gem 'rspec-core', '~> 3.0.0.beta', github: 'rspec/rspec-core'
-  gem 'rspec-expectations', '~> 3.0.0.beta', github: 'rspec/rspec-expectations'
-  gem 'rspec-mocks', '~> 3.0.0.beta', github: 'rspec/rspec-mocks'
-  gem 'rspec-support', '~> 3.0.0.beta', github: 'rspec/rspec-support'
+  gem 'rspec', '~> 3.0.0.beta2', github: 'rspec/rspec'
+  gem 'rspec-rails', '~> 3.0.0.beta2', github: 'rspec/rspec-rails'
+  gem 'rspec-core', '~> 3.0.0.beta2', github: 'rspec/rspec-core'
+  gem 'rspec-expectations', '~> 3.0.0.beta2', github: 'rspec/rspec-expectations'
+  gem 'rspec-mocks', '~> 3.0.0.beta2', github: 'rspec/rspec-mocks'
+  gem 'rspec-support', '~> 3.0.0.beta2', github: 'rspec/rspec-support'
   gem 'factory_girl_rails', '~> 4.4.1'
 end
 
@@ -45,4 +46,13 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'guard-livereload', require: false
 end
